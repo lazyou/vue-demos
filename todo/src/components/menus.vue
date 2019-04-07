@@ -15,8 +15,10 @@
     </a>
   </div>
 </template>
+
 <script>
 import { addTodo } from '../api/api';  // 引入我们 封装好的两个接口函数。
+
 export default {
   data() {
     return {
@@ -25,11 +27,13 @@ export default {
       todoNum: 0 // 新增一个状态来判断代办事项的数据
     };
   },
+
   watch: {
     'todoId'(id) {
       this.$router.push({ name: 'todo', params: { id: id } });
     }
   },
+
   computed: {
     todoList() {
       const number = this.$store.getters.getTodoList.length;
@@ -40,7 +44,9 @@ export default {
       return this.$store.getters.getTodoList; // 返回vuex getters.js 定义的getTodoList数据
     }
   },
-  created() { // 调用请求菜单列表数据的接口
+
+  created() {
+    // 调用请求菜单列表数据的接口
     // getTodoList({}).then(res => {
     //   const TODOS = res.data.todos; // 数据都会返回在res.data里面。
     //   this.items = TODOS; // 我的把菜单数据赋值给定义的this.items
@@ -52,10 +58,12 @@ export default {
       });
     });
   },
+
   methods: {
     goList(id) { // 点击菜单时候,替换选中id
       this.todoId = id;
     },
+
     addTodoList() { // 点击新增按钮时候
       // 调用vuex actions.js 里面的 getTodo函数
       addTodo({}).then(data => {
@@ -75,4 +83,3 @@ export default {
 <style lang="less">
 @import '../common/style/menu.less';
 </style>
-

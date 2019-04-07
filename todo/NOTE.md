@@ -47,10 +47,56 @@
         * 父子组件通信之 Prop: 例如 父组件 todo.vue 通过 `<item :item="item"></item>` 传递数据到 子组件 item.vue, 子组件通过 显示声明 `props: ['item']` 来接收父组件数据
 
 * vue:
-    * 指令: v-for, v-if, v-else, v-model
+    * 指令: v-for, v-if, v-else, v-model, v-show
     * 属性: :disabled="xx", :key="xx"
     * 数据绑定: {{xx}}, v-model (TODO: 一个单项数据绑定 一个双向数据绑定?)
     * 函数:
         * data()
         * methods()--放事件等
     * 事件: @keyup.enter
+
+
+## Step4: mock And axios
+* npm install mockjs axios
+
+* npm install axios-mock-adapter --save-dev // axios与mock配置器，把二者结合在一起的工具
+
+* usage:
+    * src/mock/mock.js
+    * src/mock/data/todoList.js
+
+* vue 的生命周期:
+    * https://cn.vuejs.org/v2/api/#选项-生命周期钩子
+    * created(): 在实例创建完成后被立即调用。 [更多见手册]
+
+* Class 与 Style 绑定
+    * https://cn.vuejs.org/v2/guide/class-and-style.html#main
+    * v-bind:class, v-bind:style
+    * 简写: :class, :style
+
+* 事件:
+    * @click
+
+* vue-router:
+    * 嵌套路由: https://router.vuejs.org/zh-cn/essentials/nested-routes.html
+    * 编程式导航: https://router.vuejs.org/zh/guide/essentials/navigation.html
+
+* vue 侦听器:
+    * watch() 函数
+
+
+## TODO:
+* 碰到语法问题可以使用 https://babeljs.io/repl
+
+* new Promise 怎么用?
+
+* => 短函数怎么用?
+
+* let 以下啥意思?
+    ```js
+    let {
+        id
+    } = config.params;
+    ```
+
+* then 怎么用?
