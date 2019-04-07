@@ -85,6 +85,18 @@
     * watch() 函数
 
 
+## Step5: vuex
+ * npm install vuex --save
+
+* 组件通信
+
+* Vuex 是什么: https://vuex.vuejs.org/zh/guide/
+    * state
+    * mutations
+    * getter
+    * action
+    * promise: http://es6.ruanyifeng.com/#docs/promise
+
 ## TODO:
 * 碰到语法问题可以使用 https://babeljs.io/repl
 

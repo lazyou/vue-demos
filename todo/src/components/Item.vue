@@ -12,9 +12,11 @@
     </div>
   </transition>
 </template>
+
 <script>
 // item 是todo的子组件,他接受一个对象item,来进行处理
 import { editRecord } from '../api/api';
+
 export default {
   props: {
     item: {
@@ -38,11 +40,14 @@ export default {
     'locked': {
     }
   },
+
   methods: {
     // 用户无论删除,修改，锁定都可以利用这个方法。
     onChange() {
       editRecord({
-        id: this.id, record: this.item, index: this.index
+        id: this.id,
+        record: this.item,
+        index: this.index
       }).then(data => {
         this.init();
         this.$store.dispatch('getTodo');
@@ -51,8 +56,10 @@ export default {
   }
 };
 </script>
+
 <style lang="less">
 @import '../common/style/list-items.less';
+
 .slide-fade-enter-active {
   transition: all .3s ease;
 }
